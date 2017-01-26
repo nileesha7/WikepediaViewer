@@ -29,7 +29,7 @@ $(document).ready(function(){
 		       		var text = data.query.pages[idx].extract;
 		       		var title = data.query.pages[idx].title;
 		       		var wikiUrl = "https://en.wikipedia.org/wiki/"+title.split(" ").join("_");
-		       		wikiUrl = '<a href =' +wikiUrl+'target="_blank">';
+		       		wikiUrl = '<a href ="' +wikiUrl+'" target="_blank">';
 		       		console.log(wikiUrl);
 		       		var markup = '<div class = "article-space">'+ wikiUrl+'<h3><b>'+title+'</b></h3><h5>'+text+'</h5></div>';
 		       		$('#search-results').append(markup);
