@@ -5,21 +5,20 @@
 	<script src="script.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+
 	<title>Wikipedia Viewer</title>
 </head>
 <body>
-	<div class = "container-fluid">
-		<form action = "" class="text-center">
-			<h1>Wikipedia Viewer</h1>
-			<br>
-			<p>Search wikipedia article<p>
-			<input id = "articleName" type ="text" placeholder="Search for article">
-			<button type = "button" id = "search">Search</button>
-		</form>
-
-		<div id = "search-results">
-
-		</div>
+	<div class = "jumbotron text-center">
+		<h1>Wikipedia Viewer </h1>
+			<p>Search for wikipedia articles on any topic</p>
+			<form class="form-inline">   
+				<input id = "articleName" type ="text" class="form-control"  placeholder="Search for article">
+				<button type = "submit" id = "search" class="btn btn-danger">Search</button>
+			</form>
+	</div>
+	<div id="search-results">
 	</div>
 </body>
 </html>

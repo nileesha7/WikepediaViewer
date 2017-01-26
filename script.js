@@ -32,30 +32,12 @@ $(document).ready(function(){
 		       		var markup = '<h3>'+title+'</h3><p>'+text+'</p>';
 		       		$('#search-results').append(markup);
 		       }
-		       /*
-		        var markup = data.parse.text["*"];
-		        //console.log(markup);
-           		var blurb = $('<div></div>').html(markup);
-            	$('#article').html($(blurb).find('p'));
-				*/
 		    },
 		    error: function(errorMessage){
-
+		    		var markup = '<h3>ERROR!!! RESULTS NOT FOUND</h3>';
+		    		$('#search-results').append(markup);
 		    }
 		});
-		
-		/*
-		var playListURL = 'http://en.wikipedia.org/w/api.php?format=json&action=query&titles=India&prop=revisions&rvprop=content&callback=?';
-		$.getJSON(playListURL ,function(data) {
-			var hash = data
-	        var page_value = ""
-	        $.each(data["query"]["pages"],function(k,v){
-	            alert(k)
-	            $.each(v,function(key,val){
-	              alert(key)
-	            });
-        	});
-		});
-		*/
+	
 	});
 });
