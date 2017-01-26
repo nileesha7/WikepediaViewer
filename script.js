@@ -2,6 +2,9 @@ $(document).ready(function(){
 	$("#search").click("Submit", function(e) {
 		e.preventDefault();
 
+		//Clear previous results when button is clicked
+		$('#search-results').empty();
+
 		var searchVal = $("#articleName").val();
 		//deal with the white spaces inbetween search terms
 		if (searchVal.split(" ").length > 1){
@@ -13,8 +16,6 @@ $(document).ready(function(){
 			}
 		} 
 
-		console.log(searchVal);
-
 		var url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrsearch='+searchVal+'&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&callback=?';
 
 		$.ajax( {
@@ -23,8 +24,20 @@ $(document).ready(function(){
 		    type: 'POST',
 	
 		    success: function(data) {
-		       console.log(data);
-
+		       console.log(data.query.pages);
+		       for (var idx in data.query.pages){
+		       		var text = data.query.pages[idx].extract;
+		       		var title = data.query.pages[idx].title;
+		       		console.log(text);
+		       		var markup = '<h3>'+title+'</h3><p>'+text+'</p>';
+		       		$('#search-results').append(markup);
+		       }
+		       /*
+		        var markup = data.parse.text["*"];
+		        //console.log(markup);
+           		var blurb = $('<div></div>').html(markup);
+            	$('#article').html($(blurb).find('p'));
+				*/
 		    },
 		    error: function(errorMessage){
 

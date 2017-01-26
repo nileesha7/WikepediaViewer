@@ -3,16 +3,23 @@
 <head>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 	<script src="script.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>Wikipedia Viewer</title>
 </head>
 <body>
-	<h1>Wikipedia Viewer</h1>
-	<form action = "">
-		<input id = "articleName" type ="text" placeholder="Search for article">
-		<button type = "button" id = "search">Search</button>
-	</form>
+	<div class = "container-fluid">
+		<form action = "" class="text-center">
+			<h1>Wikipedia Viewer</h1>
+			<br>
+			<p>Search wikipedia article<p>
+			<input id = "articleName" type ="text" placeholder="Search for article">
+			<button type = "button" id = "search">Search</button>
+		</form>
 
-	<div id="article"></div>
+		<div id = "search-results">
 
+		</div>
+	</div>
 </body>
 </html>
