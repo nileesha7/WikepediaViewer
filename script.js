@@ -5,17 +5,8 @@ $(document).ready(function(){
 		//Clear previous results when button is clicked
 		$('#search-results').empty();
 
-		var searchVal = $("#articleName").val();
-		//deal with the white spaces inbetween search terms
-		if (searchVal.split(" ").length > 1){
-			searchValArr = searchVal.split(' ');
-			searchVal = '';
-			for (var i in searchValArr){
-				console.log(searchValArr[i]);
-				searchVal += searchValArr[i] +'%20';
-			}
-		} 
-
+		var searchVal = $("#articleName").val().split(" ").join("%20");
+		
 		var url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrsearch='+searchVal+'&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&callback=?';
 
 		$.ajax( {
