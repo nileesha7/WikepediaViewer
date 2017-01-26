@@ -1,10 +1,14 @@
 body {
-  background: #eee;
-  font: 12px Lucida sans, Arial, Helvetica, sans-serif;
+  	background: #eee;
+  	font: 12px Lucida sans, Arial, Helvetica, sans-serif;
 	color: #333;
-	text-align: center;
 }
 
 #articleName{
 	width: 40%;
+}
+
+.article-space{
+	margin-left: 20%;
+	margin-right: 20%;
 }

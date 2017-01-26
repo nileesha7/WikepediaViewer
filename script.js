@@ -28,8 +28,10 @@ $(document).ready(function(){
 		       for (var idx in data.query.pages){
 		       		var text = data.query.pages[idx].extract;
 		       		var title = data.query.pages[idx].title;
-		       		console.log(text);
-		       		var markup = '<h3>'+title+'</h3><p>'+text+'</p>';
+		       		var wikiUrl = "https://en.wikipedia.org/wiki/"+title.split(" ").join("_");
+		       		wikiUrl = '<a href =' +wikiUrl+'target="_blank">';
+		       		console.log(wikiUrl);
+		       		var markup = '<div class = "article-space">'+ wikiUrl+'<h3><b>'+title+'</b></h3><h5>'+text+'</h5></div>';
 		       		$('#search-results').append(markup);
 		       }
 		    },
